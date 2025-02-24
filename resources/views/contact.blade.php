@@ -5,7 +5,7 @@
 <div class="container">
     <h1>Contact Us</h1>
 
-    <form action="" method="POST">
+    <form action="{{ route('contact_submit') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Your Name</label>
@@ -26,5 +26,14 @@
     </form>
 </div>
 @endsection
+
+<!-- resources/views/contact.blade.php -->
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <!-- resources/views/contact.blade.php -->
 
